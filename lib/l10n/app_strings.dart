@@ -11,364 +11,186 @@ class AppStrings {
     return AppStrings(isRu: isRu);
   }
 
-  String get refresh => isRu ? 'Обновить' : 'Refresh';
-  String get saved => isRu ? 'Настройки сохранены.' : 'Settings saved.';
-  String get saveFailed =>
-      isRu ? 'Не удалось сохранить настройки.' : 'Unable to save settings.';
-  String get permissionGranted => isRu
-      ? 'Разрешение на уведомления выдано.'
-      : 'Notification permission granted.';
-  String get permissionDenied => isRu
-      ? 'Разрешение на уведомления не выдано.'
-      : 'Notification permission was not granted.';
-  String get listenerOpened => isRu
-      ? 'Открыты настройки Notification Listener.'
-      : 'Opened Notification Listener settings.';
-  String get listenerUnavailable => isRu
-      ? 'Не удалось открыть настройки Listener.'
-      : 'Unable to open Listener settings on this device.';
-  String get notificationsOpened => isRu
-      ? 'Открыты настройки уведомлений приложения.'
-      : 'Opened app notification settings.';
-  String get notificationsUnavailable => isRu
-      ? 'Не удалось открыть настройки уведомлений.'
-      : 'Unable to open app notification settings.';
-  String get liveUpdatesOpened => isRu
-      ? 'Открыты настройки Live Updates.'
-      : 'Opened Live Updates settings.';
-  String get liveUpdatesUnavailable => isRu
-      ? 'Не удалось открыть настройки Live Updates.'
-      : 'Unable to open Live Updates settings on this device.';
-  String get githubOpenFailed => isRu
-      ? 'Не удалось открыть ссылку GitHub.'
-      : 'Unable to open GitHub link.';
-  String get dictionaryEmpty => isRu
-      ? 'Словарь пустой или поврежден.'
-      : 'Dictionary is empty or invalid.';
-  String get dictionaryDownloadFailed =>
-      isRu ? 'Не удалось выгрузить словарь.' : 'Failed to export dictionary.';
-  String get dictionarySaved =>
-      isRu ? 'Словарь сохранен в Загрузки.' : 'Dictionary saved to Downloads.';
-  String get dictionaryUploadDone => isRu
-      ? 'Пользовательский словарь загружен.'
-      : 'Custom dictionary uploaded.';
-  String get dictionaryUpdateDone =>
-      isRu ? 'Словарь обновлен из GitHub.' : 'Dictionary updated from GitHub.';
-  String get dictionaryInvalid =>
-      isRu ? 'Невалидный JSON словаря.' : 'Invalid dictionary JSON.';
-  String get dictionaryUploadFailed =>
-      isRu ? 'Не удалось загрузить словарь.' : 'Failed to upload dictionary.';
-  String get dictionaryUpdateFailed => isRu
-      ? 'Не удалось обновить словарь из GitHub.'
-      : 'Failed to update dictionary from GitHub.';
-  String get dictionaryResetDone => isRu
-      ? 'Возвращен словарь из приложения.'
-      : 'Bundled dictionary restored.';
-  String get dictionaryResetFailed =>
-      isRu ? 'Не удалось сбросить словарь.' : 'Failed to reset dictionary.';
+  // --- 基础状态反馈 ---
+  String get refresh => '刷新';
+  String get saved => '设置已保存。';
+  String get saveFailed => '无法保存设置。';
+  String get permissionGranted => '通知权限已授予。';
+  String get permissionDenied => '未获得通知权限。';
+  String get listenerOpened => '已打开通知监听设置。';
+  String get listenerUnavailable => '无法在此设备上打开监听设置。';
+  String get notificationsOpened => '已打开应用通知设置。';
+  String get notificationsUnavailable => '无法打开应用通知设置。';
+  String get liveUpdatesOpened => '已打开实时活动设置。';
+  String get liveUpdatesUnavailable => '无法在此设备上打开实时活动设置。';
+  String get githubOpenFailed => '无法打开 GitHub 链接。';
 
+  // --- 词典管理 ---
+  String get dictionaryEmpty => '词典为空或无效。';
+  String get dictionaryDownloadFailed => '导出词典失败。';
+  String get dictionarySaved => '词典已保存到下载文件夹。';
+  String get dictionaryUploadDone => '自定义词典已上传。';
+  String get dictionaryUpdateDone => '词典已从 GitHub 更新。';
+  String get dictionaryInvalid => '无效的词典 JSON。';
+  String get dictionaryUploadFailed => '上传词典失败。';
+  String get dictionaryUpdateFailed => '从 GitHub 更新词典失败。';
+  String get dictionaryResetDone => '已恢复内置词典。';
+  String get dictionaryResetFailed => '恢复词典失败。';
+
+  // --- 界面标题与提示 ---
   String get heroTitle => 'LiveBridge';
-  String get masterToggleLockedHint => isRu
-      ? 'Сначала выдайте доступ к уведомлениям и разрешение на уведомления.'
-      : 'Grant notification listener access and notifications permission first.';
+  String get masterToggleLockedHint => '请先授予通知监听权限和通知权限。';
   String get githubUrl => 'github.com/appsfolder/livebridge';
   String get githubReleasesUrl => 'github.com/appsfolder/livebridge/releases';
   String get downloadPageUrl => 'appsfolder.github.io/livebridge';
-  String get reportBug => isRu ? 'Сообщить о баге' : 'Report a bug';
-  String get bugReportCopied => isRu
-      ? 'Диагностика скопирована в буфер. Вставьте в issue.'
-      : 'Diagnostics copied to clipboard. Paste it into the issue.';
-  String get bugReportCopyFailed => isRu
-      ? 'Не удалось скопировать диагностику.'
-      : 'Failed to copy diagnostics.';
-  String get hideWarningBanner => isRu ? 'Скрыть' : 'Hide';
-  String get backgroundWarningTitle =>
-      isRu ? 'Важно для фоновой работы' : 'Background mode warning';
-  String backgroundWarningBody(String deviceLabel) => isRu
-      ? 'Для $deviceLabel нужно вручную разрешить автозапуск и работу без ограничений в фоне, иначе Live Updates могут не появляться или зависать.'
-      : 'On $deviceLabel, allow autostart and unrestricted background activity, otherwise Live Updates may stop appearing or freeze.';
-  String get samsungWarningTitle => isRu
-      ? 'Для Samsung есть версия лучше'
-      : 'A better build is available for Samsung';
-  String get samsungWarningBody => isRu
-      ? 'Для Samsung доступна специальная сборка LiveBridge с улучшенной поддержкой Samsung-функций. Лучше установить ее вместо обычной версии.'
-      : 'There is a dedicated LiveBridge build for Samsung devices with improved Samsung-specific support. It is recommended over the regular build.';
-  String get samsungWarningAction =>
-      isRu ? 'Открыть загрузки' : 'Get Samsung build';
+  String get reportBug => '报告问题';
+  String get bugReportCopied => '诊断信息已复制。请粘贴到 Issue 中。';
+  String get bugReportCopyFailed => '无法复制诊断信息。';
+  String get hideWarningBanner => '隐藏';
+  String get backgroundWarningTitle => '后台运行重要提示';
+  String backgroundWarningBody(String deviceLabel) => '在 $deviceLabel 上，请务必允许自启动和不受限的后台活动，否则实时活动可能会停止更新或冻结。';
+  String get samsungWarningTitle => '三星设备有更好的版本';
+  String get samsungWarningBody => '针对三星设备，有专门优化的 LiveBridge 版本，建议安装该版本。';
+  String get samsungWarningAction => '获取三星专用版';
 
-  String get accessTitle => isRu ? 'Разрешения' : 'Permissions';
-  String get accessSubtitle => isRu
-      ? 'Без этих трёх разрешений конвертация будет работать нестабильно.'
-      : 'Conversion reliability depends on these three permissions.';
-  String get listenerAccess =>
-      isRu ? 'Доступ к уведомлениям' : 'Notification Listener access';
-  String get postNotifications =>
-      isRu ? 'Отправка уведомлений' : 'Post notifications permission';
-  String get liveUpdatesAccess =>
-      isRu ? 'Продвижение Live Updates' : 'Live Updates promotion';
-  String get open => isRu ? 'Открыть' : 'Open';
-  String get request => isRu ? 'Запросить' : 'Request';
-  String get grant => isRu ? 'Выдать' : 'Grant';
-  String get manage => isRu ? 'Управлять' : 'Manage';
-  String get settingsTitle => isRu ? 'Настройки' : 'Settings';
-  String get keepAliveForegroundTitle =>
-      isRu ? 'Альтернативный фоновый режим' : 'Alt background mode';
-  String get keepAliveForegroundSubtitle => isRu
-      ? 'Держит foreground-сервис для более стабильной работы в фоне.'
-      : 'Runs a persistent foreground service for better background stability.';
-  String get keepAliveForegroundInactiveSubtitle => isRu
-      ? 'Включите LiveBridge, чтобы режим начал работать.'
-      : 'Enable the LiveBridge for this mode to take effect.';
-  String get networkSpeedTitle => isRu ? 'Скорость сети' : 'Network speed';
-  String get networkSpeedSubtitle => isRu
-      ? 'Показывает загрузку и отдачу как отдельный Live Update в статус-баре.'
-      : 'Shows current download and upload as a separate Live Update in the status bar.';
-  String get networkSpeedInactiveSubtitle => isRu
-      ? 'Включите LiveBridge, чтобы монитор скорости начал работать.'
-      : 'Enable LiveBridge for the network speed monitor to start working.';
-  String get networkSpeedThresholdTitle =>
-      isRu ? 'Минимальная скорость для показа' : 'Minimum speed to show';
-  String get networkSpeedThresholdSubtitle => isRu
-      ? 'Лайв-элемент появится, когда суммарная скорость загрузки и отдачи достигнет этого порога.'
-      : 'The live element appears when combined download and upload reach this threshold.';
-  String get networkSpeedThresholdAlways =>
-      isRu ? 'Показывать всегда' : 'Always show';
-  String get smartExternalDevicesIgnoreDebuggingTitle =>
-      isRu ? 'Игнорировать отладку' : 'Ignore debugging';
-  String get smartExternalDevicesIgnoreDebuggingSubtitle => isRu
-      ? 'Не показывать Live для USB debugging, wireless debugging, ADB и похожих системных уведомлений.'
-      : 'Skip Live updates for USB debugging, wireless debugging, ADB, and similar system notifications.';
-  String get syncDndTitle => isRu ? 'Синхронизировать DnD' : 'Sync DnD';
-  String get syncDndSubtitle => isRu
-      ? 'Если на смартфоне включен режим Не беспокоить, уведомления LiveBridge не показываются.'
-      : 'When Do Not Disturb is enabled on the phone, LiveBridge notifications are hidden.';
-  String get updateChecksTitle =>
-      isRu ? 'Проверка обновлений' : 'Update checking';
-  String get updateChecksSubtitle => isRu
-      ? 'Проверять обновления при входе и не чаще одного раза в 6 часов.'
-      : 'Check updates on app start, and no more than once every 6 hours.';
-  String updateAvailableBanner(String version) => isRu
-      ? 'Доступно обновление${version.isNotEmpty ? ': $version' : ''}'
-      : 'Update available${version.isNotEmpty ? ': $version' : ''}';
-  String get experimentalTitle => isRu ? 'Экспериментальное' : 'Experimental';
-  String get notificationDedupTitle =>
-      isRu ? 'Notification dedup' : 'Notification dedup';
-  String get notificationDedupSubtitle => isRu
-      ? 'Убирает оригинальные clearable-уведомления, если LiveBridge уже показал свой OTP или статус.'
-      : 'Dismisses original clearable notifications after LiveBridge mirrors an OTP or status update.';
-  String get notificationDedupModeLabel =>
-      isRu ? 'Режим dedup' : 'Dedup mode';
-  String get notificationDedupModeOtpStatus => isRu
-      ? 'OTP и статусы'
-      : 'OTP and statuses';
-  String get notificationDedupModeOtpOnly =>
-      isRu ? 'Только OTP' : 'OTP only';
-  String get notificationDedupStatusesTitle => isRu
-      ? 'Также статусы'
-      : 'Also dedup statuses';
-  String get notificationDedupStatusesSubtitle => isRu
-      ? 'Если выключено, dedup применяется только к OTP-кодам.'
-      : 'When disabled, dedup is applied only to OTP notifications.';
-  String get animatedIslandTitle =>
-      isRu ? 'Анимированный остров' : 'Animated island';
-  String get animatedIslandSubtitle => isRu
-      ? 'Меняет короткий текст острова каждые 2-3 секунды для smart-уведомлений (может работать нестабильно).'
-      : 'Rotates compact island text every 2-3 seconds for smart notifications (may be unstable).';
-  String get hyperBridgeTitle => 'Xiaomi Hyper Island';
-  String get hyperBridgeSubtitle => isRu
-      ? 'Для Xiaomi Hyper OS 3.1 Глобальной: добавляет HyperOS Focus-параметры для нативного острова.'
-      : 'For Xiaomi Hyper OS 3.1 Global: injects HyperOS Focus parameters for native island behavior.';
-  String get aospCuttingTitle => isRu ? 'Обрезка AOSP' : 'AOSP cutting';
-  String get aospCuttingSubtitle => isRu
-      ? 'Обрезать информацию в острове до 7 символов для красивого отображения в AOSP-прошивках.'
-      : 'Trim island text to 7 characters for cleaner rendering on AOSP ROMs.';
-  String get appPresentationSettings =>
-      isRu ? 'Поведение приложений' : 'Per-app behavior';
-  String get appPresentationSubtitle => isRu
-      ? 'Настройте источник текста и иконки отдельно для разных приложений.'
-      : 'Choose text and icon behavior separately for different applications.';
-  String get appPresentationScreenTitle =>
-      isRu ? 'Поведение приложений' : 'Per-app behavior';
-  String get appPresentationLoadFailed => isRu
-      ? 'Не удалось загрузить настройки приложений.'
-      : 'Unable to load per-app settings.';
-  String get appPresentationSaveFailed => isRu
-      ? 'Не удалось сохранить настройки приложений.'
-      : 'Unable to save per-app settings.';
-  String get appPresentationDownloadFailed => isRu
-      ? 'Не удалось сохранить JSON настроек.'
-      : 'Failed to save settings JSON.';
-  String get appPresentationSaved =>
-      isRu ? 'Настройки сохранены в Загрузки.' : 'Settings saved to Downloads.';
-  String get appPresentationUploadDone =>
-      isRu ? 'Настройки приложений загружены.' : 'Per-app settings imported.';
-  String get appPresentationUploadFailed => isRu
-      ? 'Не удалось загрузить JSON настроек.'
-      : 'Failed to import settings JSON.';
-  String get appPresentationInvalidJson => isRu
-      ? 'Невалидный JSON настроек приложений.'
-      : 'Invalid per-app settings JSON.';
-  String get appPresentationDefaultSummary =>
-      isRu ? 'Стандартное поведение' : 'Default behavior';
-  String get appPresentationTextSourceLabel =>
-      isRu ? 'Источник текста для острова' : 'Island text source';
-  String get appPresentationIconSourceLabel =>
-      isRu ? 'Источник иконки' : 'Icon source';
-  String get appPresentationTextTitle =>
-      isRu ? 'Title уведомления' : 'Notification title';
-  String get appPresentationTextNotification =>
-      isRu ? 'Текст уведомления' : 'Notification text';
-  String get appPresentationIconNotification =>
-      isRu ? 'Иконка уведомления' : 'Notification icon';
-  String get appPresentationIconApp =>
-      isRu ? 'Иконка приложения' : 'Application icon';
-  String get downloadSettings =>
-      isRu ? 'Скачать настройки' : 'Download settings';
-  String get uploadSettings => isRu ? 'Загрузить настройки' : 'Upload settings';
-  String get defaultLabel => isRu ? 'По умолчанию' : 'Default';
-  String get resetToDefault =>
-      isRu ? 'Сбросить к стандарту' : 'Reset to default';
-  String get save => isRu ? 'Сохранить' : 'Save';
-  String get downloadDictionary =>
-      isRu ? 'Скачать словарь' : 'Download dictionary';
-  String get updateDictionary =>
-      isRu ? 'Обновить словарь' : 'Update dictionary';
-  String get uploadDictionary =>
-      isRu ? 'Загрузить словарь' : 'Upload dictionary';
-  String get resetDictionary => isRu ? 'Сбросить словарь' : 'Reset dictionary';
-  String get pickApps => isRu ? 'Выбрать приложения' : 'Pick applications';
-  String get pickerTitle =>
-      isRu ? 'Приложения для конвертации' : 'Choose apps for conversion';
-  String get otpPickerTitle =>
-      isRu ? 'Приложения для кодов' : 'Choose apps for code detection';
-  String get bypassPickerTitle =>
-      isRu ? 'Приложения bypass' : 'Choose apps for bypass';
-  String get notificationDedupPickerTitle => isRu
-      ? 'Приложения для dedup'
-      : 'Choose apps for notification dedup';
-  String get applySelection => isRu ? 'Применить выбор' : 'Apply selection';
-  String get searchAppHint =>
-      isRu ? 'Поиск по названию или пакету' : 'Search by app or package';
-  String get showSystemApps =>
-      isRu ? 'Показать системные приложения' : 'Show system applications';
-  String get hideSystemApps =>
-      isRu ? 'Скрыть системные приложения' : 'Hide system applications';
-  String get appsLoadFailed => isRu
-      ? 'Не удалось загрузить список приложений.'
-      : 'Unable to load installed apps list.';
-  String get appsAccessTitle =>
-      isRu ? 'Доступ к списку приложений' : 'App list access';
-  String get appsAccessMessage => isRu
-      ? 'Разрешить LiveBridge читать список установленных приложений для выбора правил?'
-      : 'Allow LiveBridge to read installed apps so you can pick apps for rules?';
-  String get appsAccessSaveFailed => isRu
-      ? 'Не удалось сохранить выбор доступа.'
-      : 'Unable to save access preference.';
-  String get cancel => isRu ? 'Отмена' : 'Cancel';
-  String get allow => isRu ? 'Разрешить' : 'Allow';
-  String selectedAppsCount(int value) =>
-      isRu ? 'Выбрано приложений: $value' : 'Selected apps: $value';
-  String get noAppsSelected =>
-      isRu ? 'Приложения не выбраны' : 'No applications selected';
+  // --- 权限管理 ---
+  String get accessTitle => '权限管理';
+  String get accessSubtitle => '开启以下核心权限以确保功能稳定：';
+  String get listenerAccess => '通知监听权限';
+  String get postNotifications => '允许发送通知';
+  String get liveUpdatesAccess => '实时活动增强权限';
+  String get open => '打开';
+  String get request => '请求';
+  String get grant => '授予';
+  String get manage => '管理';
 
-  String get rulesTitle => isRu ? 'Режим конвертации' : 'Conversion behavior';
-  String get rulesSubtitle => isRu
-      ? 'Настройте, что именно превращать в Live Updates.'
-      : 'Define what should be converted into Live Updates.';
-  String get modeLabel => isRu ? 'Режим работы' : 'Application mode';
-  String get modeAll => isRu ? 'Все приложения' : 'All applications';
-  String get modeInclude =>
-      isRu ? 'Только указанные' : 'Only listed applications';
-  String get modeExclude =>
-      isRu ? 'Исключить указанные' : 'Exclude listed applications';
-  String get pickAppsHint => isRu
-      ? 'Список используется только в режимах "Только указанные" или "Исключить".'
-      : 'Selected app list is used only for include/exclude modes.';
-  String get bypassRulesTitle => isRu ? 'Bypass-приложения' : 'Bypass apps';
-  String get bypassRulesSubtitle => isRu
-      ? 'Приложения из списка всегда конвертируются в Live вне зависимости от настроек.'
-      : 'Listed apps are always converted to Live independently of settings.';
-  String get saveRules => isRu ? 'Сохранить' : 'Save';
+  // --- 核心设置 ---
+  String get settingsTitle => '设置';
+  String get keepAliveForegroundTitle => '增强后台模式';
+  String get keepAliveForegroundSubtitle => '运行持久前台服务以提升后台稳定性。';
+  String get keepAliveForegroundInactiveSubtitle => '开启 LiveBridge 后激活。';
+  String get networkSpeedTitle => '网速显示';
+  String get networkSpeedSubtitle => '在状态栏实时显示当前上传/下载速度。';
+  String get networkSpeedInactiveSubtitle => '开启 LiveBridge 后激活。';
+  String get networkSpeedThresholdTitle => '显示门槛';
+  String get networkSpeedThresholdSubtitle => '达到此网速后才显示实时活动。';
+  String get networkSpeedThresholdAlways => '始终显示';
+  String get syncDndTitle => '同步勿扰模式';
+  String get syncDndSubtitle => '手机开启勿扰时自动隐藏通知。';
+  String get updateChecksTitle => '检查更新';
+  String get updateChecksSubtitle => '应用启动时自动检测新版本。';
+  String updateAvailableBanner(String version) => '发现新版本${version.isNotEmpty ? ': $version' : ''}';
 
-  String get smartDetectionTitle =>
-      isRu ? 'Умное распознавание' : 'Smart status detection';
-  String get smartCardTitle =>
-      isRu ? 'Умное преобразование' : 'Smart conversion';
-  String get smartCardSubtitle => isRu
-      ? 'Преобразование текстовых этапов в один Live-прогресс.'
-      : 'Converts text-only stage updates into one Live progress flow.';
-  String get smartDetectionSubtitle => isRu
-      ? 'Преобразует текстовые статусы еды, такси и навигации в единый Live-прогресс.'
-      : 'Converts text-only food/taxi/navigation status notifications into a single Live.';
-  String get smartMediaPlaybackTitle =>
-      isRu ? 'Media Playback' : 'Media Playback';
-  String get smartMediaPlaybackSubtitle => isRu
-      ? 'Преобразует уведомления медиаплеера в Live. На некоторых OEM может дублировать нативный плеер.'
-      : 'Converts media playback notifications into Live. On some OEMs this may duplicate native media UI.';
-  String get smartNavigationTitle =>
-      isRu ? 'Навигация (карты)' : 'Navigation (maps)';
-  String get smartNavigationSubtitle => isRu
-      ? 'Распознавание уведомлений навигации.'
-      : 'Navigation notification detection.';
-  String get smartWeatherTitle => isRu ? 'Погода' : 'Weather';
-  String get smartWeatherSubtitle => isRu
-      ? 'Распознавание погодных уведомлений (температура в острове).'
-      : 'Weather notification detection (temperature in island).';
-  String get smartExternalDevicesTitle =>
-      isRu ? 'Внешние устройства' : 'External devices';
-  String get smartExternalDevicesSubtitle => isRu
-      ? 'Показывает статус connected/connecting и имя устройства в острове.'
-      : 'Shows connected/connecting status and device name in island.';
-  String get smartVpnTitle => isRu ? 'VPN-сервисы' : 'VPN services';
-  String get smartVpnSubtitle => isRu
-      ? 'Показывает входящий/исходящий трафик в формате *b/s.'
-      : 'Shows incoming/outgoing traffic speed in *b/s format.';
-  String get smartNavigationDisabledSubtitle => isRu
-      ? 'Сначала включите умное распознавание.'
-      : 'Enable smart status detection first.';
-  String get smartDetectionDisabledSubtitle => isRu
-      ? 'Отключено в режиме "Прогресс".'
-      : 'Disabled while "Progress" mode is enabled.';
-  String get conflictingModesHint => isRu
-      ? 'Чтобы работали текстовые статусы, отключите режим "Прогресс".'
-      : 'Turn off "Progress" mode to enable food/taxi/navigation text status recognition.';
-  String get onlyProgressTitle => isRu ? 'Прогресс' : 'Progress';
-  String get onlyProgressSubtitle => isRu
-      ? 'Если включено, конвертируются только уведомления с системным прогрессбаром.'
-      : 'When enabled, only notifications with a system progress bar are converted.';
-  String get textProgressTitle =>
-      isRu ? 'Текстовые прогрессы' : 'Text progress';
-  String get textProgressSubtitle => isRu
-      ? 'Если в тексте есть %, и это не скидка/акция, считать как прогресс и обновлять остров.'
-      : 'If text contains % and it is not discount-related, treat it as progress and update island.';
+  // --- 实验性功能 ---
+  String get experimentalTitle => '实验性功能';
+  String get notificationDedupTitle => '通知去重';
+  String get notificationDedupSubtitle => '当 LiveBridge 已显示内容时，消除原始通知。';
+  String get notificationDedupModeLabel => '去重模式';
+  String get notificationDedupModeOtpStatus => '验证码与状态';
+  String get notificationDedupModeOtpOnly => '仅验证码';
+  String get notificationDedupStatusesTitle => '同时去重状态通知';
+  String get notificationDedupStatusesSubtitle => '关闭后仅针对验证码去重。';
+  String get animatedIslandTitle => '动态岛动画';
+  String get animatedIslandSubtitle => '循环切换灵动岛短文本（可能不稳定）。';
+  String get hyperBridgeTitle => '小米 HyperOS 灵动岛';
+  String get hyperBridgeSubtitle => '针对小米 HyperOS：注入原生灵动岛参数。';
+  String get aospCuttingTitle => 'AOSP 文本截断';
+  String get aospCuttingSubtitle => '将灵动岛文本限制在 7 个字符以内。';
 
-  String get blockedTitle =>
-      isRu ? 'AOSP поддерживается частично' : 'AOSP is partially supported';
-  String get blockedSubtitle => isRu
-      ? 'LiveBridge плохо работает на устройствах с AOSP. Можете продолжить, но за последствия я не отвечаю.'
-      : 'LiveBridge is not designed for AOSP. You can continue, but i am not responsible for any bugs.';
-  String get blockedBypassAction =>
-      isRu ? 'Все равно родолжить' : 'Continue anyway';
-  String get blockedBypassSaveFailed =>
-      isRu ? 'Не удалось сохранить выбор.' : 'Unable to save your choice.';
+  // --- 应用独立设置 ---
+  String get appPresentationSettings => '应用独立设置';
+  String get appPresentationSubtitle => '为不同应用单独定制显示行为。';
+  String get appPresentationScreenTitle => '应用定制管理';
+  String get appPresentationLoadFailed => '无法加载应用设置。';
+  String get appPresentationSaveFailed => '无法保存应用设置。';
+  String get appPresentationDownloadFailed => '导出 JSON 失败。';
+  String get appPresentationSaved => '设置已保存至下载文件夹。';
+  String get appPresentationUploadDone => '应用设置已导入。';
+  String get appPresentationUploadFailed => '导入 JSON 失败。';
+  String get appPresentationInvalidJson => '无效的 JSON 配置。';
+  String get appPresentationDefaultSummary => '默认行为';
+  String get appPresentationTextSourceLabel => '灵动岛文本来源';
+  String get appPresentationIconSourceLabel => '图标来源';
+  String get appPresentationTextTitle => '通知标题';
+  String get appPresentationTextNotification => '通知内容';
+  String get appPresentationIconNotification => '通知图标';
+  String get appPresentationIconApp => '应用图标';
 
-  String get otpTitle => isRu ? 'Коды подтверждения' : 'Verification codes';
-  String get otpSubtitle => isRu
-      ? 'Показывает код компактно в острове.'
-      : 'Shows the code in compact island.';
-  String get otpEnabledTitle =>
-      isRu ? 'Распознавать 2FA коды' : 'Detect verification codes';
-  String get otpEnabledSubtitle => isRu
-      ? 'В свернутом Live-острове показывается сам код.'
-      : 'Shows the numeric code in the compact island.';
-  String get otpAutoCopyTitle =>
-      isRu ? 'Автокопирование кода' : 'Auto-copy code';
-  String get otpAutoCopySubtitle => isRu
-      ? 'Код сразу копируется в буфер обмена.'
-      : 'Code is copied to clipboard automatically.';
-  String get otpAutoCopyDisabledSubtitle => isRu
-      ? 'Сначала включите распознавание кодов.'
-      : 'Enable code detection first.';
-  String get otpModeLabel => isRu ? 'Режим для кодов' : 'Code apps mode';
-  String get saveOtpRules => isRu ? 'Сохранить' : 'Save';
+  // --- 通用操作 ---
+  String get downloadSettings => '下载设置';
+  String get uploadSettings => '上传设置';
+  String get defaultLabel => '默认';
+  String get resetToDefault => '恢复默认';
+  String get save => '保存';
+  String get downloadDictionary => '下载词典';
+  String get updateDictionary => '更新词典';
+  String get uploadDictionary => '上传词典';
+  String get resetDictionary => '重置词典';
+  String get pickApps => '选择应用';
+  String get pickerTitle => '选择应用';
+  String get otpPickerTitle => '识别验证码的应用';
+  String get bypassPickerTitle => '白名单应用';
+  String get notificationDedupPickerTitle => '去重应用';
+  String get applySelection => '应用选择';
+  String get searchAppHint => '搜索名称或包名';
+  String get showSystemApps => '显示系统应用';
+  String get hideSystemApps => '隐藏系统应用';
+  String get appsLoadFailed => '无法加载应用列表。';
+  String get appsAccessTitle => '应用列表权限';
+  String get appsAccessMessage => '允许读取应用列表以配置规则？';
+  String get appsAccessSaveFailed => '无法保存权限偏好。';
+  String get cancel => '取消';
+  String get allow => '允许';
+  String selectedAppsCount(int value) => '已选择 $value 个应用';
+  String get noAppsSelected => '未选择应用';
+
+  // --- 转换规则 ---
+  String get rulesTitle => '转换规则';
+  String get rulesSubtitle => '定义通知转换逻辑。';
+  String get modeLabel => '运行模式';
+  String get modeAll => '所有应用';
+  String get modeInclude => '仅包含';
+  String get modeExclude => '排除模式';
+  String get pickAppsHint => '列表仅在包含/排除模式下生效。';
+  String get bypassRulesTitle => '白名单应用';
+  String get bypassRulesSubtitle => '列表应用将始终进行转换。';
+  String get saveRules => '保存';
+
+  // --- 智能检测 ---
+  String get smartDetectionTitle => '智能状态检测';
+  String get smartCardTitle => '智能转换';
+  String get smartCardSubtitle => '将文本阶段转换为进度流。';
+  String get smartDetectionSubtitle => '识别外卖/打车/导航状态。';
+  String get smartMediaPlaybackTitle => '媒体播放';
+  String get smartMediaPlaybackSubtitle => '将媒体通知转换为实时活动。';
+  String get smartNavigationTitle => '导航识别';
+  String get smartNavigationSubtitle => '自动识别地图导航通知。';
+  String get smartWeatherTitle => '天气识别';
+  String get smartWeatherSubtitle => '在灵动岛显示当前温度。';
+  String get smartExternalDevicesTitle => '外部设备';
+  String get smartExternalDevicesSubtitle => '显示蓝牙设备连接状态。';
+  String get smartVpnTitle => 'VPN 服务';
+  String get smartVpnSubtitle => '显示 VPN 实时流量。';
+  String get smartNavigationDisabledSubtitle => '请先开启智能检测。';
+  String get smartDetectionDisabledSubtitle => '在“仅限进度条”模式下禁用。';
+  String get conflictingModesHint => '请关闭“仅限进度条”以启用文本状态识别。';
+  String get onlyProgressTitle => '仅限进度条';
+  String get onlyProgressSubtitle => '开启后仅转换带进度条的通知。';
+  String get textProgressTitle => '文本进度识别';
+  String get textProgressSubtitle => '识别文本中的 % 为进度。';
+
+  // --- 系统兼容性与验证码 ---
+  String get blockedTitle => 'AOSP 兼容性警告';
+  String get blockedSubtitle => '此应用在 AOSP 固件上表现欠佳，请谨慎使用。';
+  String get blockedBypassAction => '仍然继续';
+  String get blockedBypassSaveFailed => '无法保存选择。';
+  String get otpTitle => '验证码显示';
+  String get otpSubtitle => '在灵动岛显示验证码。';
+  String get otpEnabledTitle => '识别验证码';
+  String get otpEnabledSubtitle => '在折叠状态下直接显示代码。';
+  String get otpAutoCopyTitle => '自动复制';
+  String get otpAutoCopySubtitle => '自动将代码复制到剪贴板。';
+  String get otpAutoCopyDisabledSubtitle => '请先开启验证码识别。';
+  String get otpModeLabel => '验证码模式';
+  String get saveOtpRules => '保存';
 }
