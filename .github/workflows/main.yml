@@ -1,29 +1,28 @@
 name: Build Android APK
 on:
   push:
-    branches: [ main ] # 当你提交代码到 main 分支时触发
-  workflow_dispatch: # 允许你手动点击按钮触发
+    branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3 # 拉取你的代码
+      - uses: actions/checkout@v4 # 升级到 v4
       
       - name: Install Flutter
-        uses: subosito/flutter-action@v2 # 安装 Flutter 环境
+        uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
           
       - name: Get dependencies
-        run: flutter pub get # 下载插件
+        run: flutter pub get
         
       - name: Build APK
-        run: flutter build apk --release # 开始打包 APK
+        run: flutter build apk --release
         
       - name: Upload Artifact
-        uses: actions/upload-artifact@v3 # 把做好的 APK 传上来
+        uses: actions/upload-artifact@v4 # 必须改为 v4 才能修好红叉
         with:
-          name: my-chinese-version
+          name: livebridge-chinese-apk
           path: build/app/outputs/flutter-apk/app-release.apk
-
