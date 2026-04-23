@@ -1,1 +1,29 @@
+name: Build Android APK
+on:
+  push:
+    branches: [ main ] # 当你提交代码到 main 分支时触发
+  workflow_dispatch: # 允许你手动点击按钮触发
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3 # 拉取你的代码
+      
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2 # 安装 Flutter 环境
+        with:
+          channel: 'stable'
+          
+      - name: Get dependencies
+        run: flutter pub get # 下载插件
+        
+      - name: Build APK
+        run: flutter build apk --release # 开始打包 APK
+        
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3 # 把做好的 APK 传上来
+        with:
+          name: my-chinese-version
+          path: build/app/outputs/flutter-apk/app-release.apk
 
